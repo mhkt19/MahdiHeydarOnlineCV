@@ -32,6 +32,20 @@ function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    // Check if we're at the bottom of the page
+    const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+    
+    if (isAtBottom) {
+        // If we're at the bottom, activate the "Contact" link
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#contact') {
+                link.classList.add('active');
+            }
+        });
+        return;
+    }
+    
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -65,6 +79,16 @@ function updateNavbar() {
 window.addEventListener('scroll', () => {
     updateActiveNav();
     updateNavbar();
+});
+
+// Special handling for contact link click
+document.querySelector('a[href="#contact"]').addEventListener('click', function() {
+    // Remove active class from all links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    // Add active class to contact link
+    this.classList.add('active');
 });
 
 // Intersection Observer for animations

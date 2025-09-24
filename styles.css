@@ -94,6 +94,8 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 600px;
+    max-height: 1000px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
@@ -101,6 +103,8 @@ body {
     text-align: center;
     color: white;
     position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
 }
 
 .hero::before {
@@ -205,6 +209,12 @@ section {
 
 /* About Section */
 .about {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+.about {
     background: #f8f9fa;
 }
 
@@ -300,6 +310,10 @@ section {
     border-top-color: #27ae60;
 }
 
+.strength-card:nth-child(7) {
+    border-top-color: #3498db;
+}
+
 .strength-icon {
     width: 70px;
     height: 70px;
@@ -344,6 +358,11 @@ section {
     box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
 }
 
+.strength-card:nth-child(7) .strength-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
 .strength-card h3 {
     color: #2c3e50;
     margin-bottom: 1rem;
@@ -359,6 +378,12 @@ section {
 }
 
 /* Experience Section */
+.experience {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
 .timeline {
     position: relative;
     max-width: 800px;
@@ -440,6 +465,12 @@ section {
 }
 
 /* Skills Section */
+.skills {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
 .skills {
     background: #f8f9fa;
 }
@@ -603,6 +634,12 @@ section {
 }
 
 /* Projects Section */
+.projects {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -773,6 +810,12 @@ section {
 
 /* Education Section */
 .education {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+.education {
     background: #f8f9fa;
 }
 
@@ -829,7 +872,9 @@ section {
 
 /* Publications Section */
 .publications {
-    background: white;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 .publications-content {
@@ -860,17 +905,180 @@ section {
     filter: drop-shadow(0 2px 4px rgba(46, 95, 181, 0.2));
 }
 
+.publications-intro {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.publications-icon {
+    font-size: 3rem;
+    color: #3498db;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 .publications-list {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .publication-item {
-    background: #f8f9fa;
+    background: #ffffff;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
     border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.publication-icon {
+    font-size: 1.8rem;
+    color: white;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    flex-shrink: 0;
+}
+
+.publication-content {
+    flex-grow: 1;
+}
+
+.publication-year {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.publication-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.publication-tags .tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.tag.genomics { background: #9b59b6; }
+.tag.algorithm { background: #3498db; }
+.tag.impact { background: #e74c3c; }
+.tag.sequencing { background: #2ecc71; }
+.tag.software { background: #f39c12; }
+.tag.evaluation { background: #16a085; }
+.tag.tools { background: #e67e22; }
+.tag.assembly { background: #1abc9c; }
+
+.publication-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.publication-icon {
+    font-size: 1.8rem;
+    color: white;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    flex-shrink: 0;
+}
+
+.publication-content {
+    flex-grow: 1;
+}
+
+.publication-year {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.publication-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.publication-tags .tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.tag.genomics { background: #9b59b6; }
+.tag.algorithm { background: #3498db; }
+.tag.impact { background: #e74c3c; }
+.tag.sequencing { background: #2ecc71; }
+.tag.software { background: #f39c12; }
+.tag.evaluation { background: #16a085; }
+.tag.tools { background: #e67e22; }
+.tag.assembly { background: #1abc9c; }
+
+.publications-intro {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.publications-icon {
+    font-size: 3rem;
+    color: #3498db;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .publication-item h4 {
@@ -884,7 +1092,15 @@ section {
 
 /* Contact Section */
 .contact {
-    background: #2c3e50;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.contact {
+    background: #2c3e50; /* Restored dark background */
     color: white;
 }
 
@@ -902,10 +1118,264 @@ section {
     gap: 3rem;
 }
 
+.contact-info-section {
+    /* Remove any gradient or colored background */
+    background: transparent !important;
+}
+
+.contact-details {
+    /* Remove any background from contact details */
+    background: transparent !important;
+}
+
 .contact-info-section h3,
-.references-section h3 {
+.contact-form-section h3 {
     margin-bottom: 1.5rem;
+    color: #3498db; /* Keep the blue accent color for headings */
+}
+
+.email-button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+}
+
+.email-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.email-button i {
+    margin-right: 8px;
+}
+
+/* References Section - Modern Design */
+.references {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    color: #2c3e50;
+    padding: 80px 0;
+}
+
+.references .section-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.references-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.intro-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid #e6e9ef;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.intro-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.intro-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.intro-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.reference-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.reference-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.reference-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.reference-card.management .reference-badge {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.reference-card.collaboration .reference-badge {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.reference-card.business .reference-badge {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.reference-card.technical .reference-badge {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.reference-card.user .reference-badge {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.reference-card.external .reference-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.reference-title h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.reference-type {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.card-content {
+    padding: 1.5rem;
+    color: #2c3e50;
+    flex: 1; /* Make this take up available space */
+}
+
+.card-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #34495e;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.tag.leadership { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.tag.performance { background: linear-gradient(135deg, #e67e22, #d35400); }
+.tag.growth { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.tag.technical { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.tag.analytical { background: linear-gradient(135deg, #3498db, #2980b9); }
+.tag.teamwork { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.tag.business { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.tag.delivery { background: linear-gradient(135deg, #34495e, #2c3e50); }
+.tag.value { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.tag.coding { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.tag.collaboration { background: linear-gradient(135deg, #3498db, #2980b9); }
+.tag.innovation { background: linear-gradient(135deg, #e67e22, #d35400); }
+.tag.usability { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.tag.impact { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.tag.evolution { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.tag.external { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+.tag.datasci { background: linear-gradient(135deg, #6c5ce7, #5f3dc4); }
+.tag.techleader { background: linear-gradient(135deg, #fd79a8, #e84393); }
+.tag.longterm { background: linear-gradient(135deg, #00b894, #00a085); }
+.tag.documentation { background: linear-gradient(135deg, #55efc4, #00cec9); }
+.tag.translation { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+
+.card-footer {
+    background: #f8f9fa;
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0; /* Ensure no margin at bottom */
+}
+
+.reference-code {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0; /* Remove any bottom margin */
+    line-height: 1; /* Tighter line height */
+}
+
+.reference-code i {
     color: #3498db;
+}
+
+.reference-code span {
+    font-family: 'Courier New', monospace;
+    background: rgba(52, 152, 219, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: #2c3e50;
+    font-weight: bold;
+    display: inline-block; /* Prevent line breaks */
+    white-space: nowrap; /* Keep code on one line */
 }
 
 .contact-details .contact-item {
@@ -921,50 +1391,19 @@ section {
     color: #3498db;
 }
 
-.references-section p {
-    color: #bdc3c7;
-    line-height: 1.6;
-}
-
-.reference-list {
-    margin-top: 2rem;
-}
-
-.reference-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #3498db;
-}
-
-.reference-item h4 {
-    color: #3498db;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.reference-item p {
-    color: #bdc3c7;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-.ref-code {
-    font-family: 'Courier New', monospace;
-    background: rgba(52, 152, 219, 0.2);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    color: #3498db;
-    font-weight: bold;
-}
-
 /* Footer */
 .footer {
     background: #1a252f;
     color: white;
     text-align: center;
     padding: 2rem 0;
+}
+
+.footer .credits {
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-top: 0.75rem;
+    opacity: 0.8;
 }
 
 /* Animations */
@@ -1053,8 +1492,47 @@ section {
 
     .skills-grid,
     .projects-grid,
-    .education-grid {
+    .education-grid,
+    .references-grid {
         grid-template-columns: 1fr;
+    }
+
+    .intro-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .intro-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .reference-card {
+        margin-bottom: 1rem;
+    }
+
+    .card-header {
+        padding: 1rem;
+    }
+
+    .reference-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .reference-title h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .expertise-tags {
+        justify-content: center;
     }
 }
 
@@ -1098,6 +1576,8 @@ html {
 .timeline-item p,
 .reference-item p,
 .reference-description p,
+.card-content p,
+.intro-content p,
 .skill-item p,
 .position-card p,
 .publication-item p,

@@ -1,0 +1,13 @@
+/* Additional styles for publications */
+.publication-item {
+    border-left: none !important;
+}
+
+/* Disabled link styling */
+.disabled-link {
+    color: #007bff;
+    cursor: default;
+    text-decoration: none;
+    opacity: 0.75;
+    pointer-events: none;
+}
