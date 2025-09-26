@@ -6,8 +6,12 @@
     <title>Mahdi Heydari - Data & AI Expert</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="publication-fixes.css">
+    <link rel="stylesheet" href="visitor-map.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://d3js.org/d3-geo.v2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -56,8 +60,8 @@
             <h2 class="section-title">Professional Overview</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>With over five years of industry experience as a Product Architect & Analyst, combined with five years of academic research leading to a PhD in Computer Science, I am now looking to take the next step in my career.</p>
-                    <p>I am especially interested in roles related to AI or data, where I can apply my analytical mindset and technical background to support innovative and impactful solutions. I remain open to discussing any opportunities where I can bring value and continue to grow professionally.</p>
+                    <p>With over five years of industry experience as a Product Architect & Analyst, combined with five years of academic research leading to a PhD in Computer Science, looking to take the next step in my career.</p>
+                    <p>Particularly interested in roles related to AI or data, where analytical thinking and technical background could support innovative solutions. Open to discussing opportunities for adding value and continued professional growth.</p>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -68,10 +72,7 @@
                         <i class="fas fa-phone"></i>
                         <span>+32 4....</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>mahdi.heydari@ArcelorMittal.com</span>
-                    </div>
+
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <span>mahdi.heydari.be@gmail.com</span>
@@ -405,21 +406,21 @@
                         <i class="fas fa-exchange-alt"></i>
                     </div>
                     <h3>Translating Business Needs into Technical Solutions</h3>
-                    <p>I have repeatedly acted as the bridge between business stakeholders and development teams, effectively translating requirements into actionable technical plans.</p>
+                    <p>Experience serving as a liaison between business stakeholders and development teams, helping translate requirements into technical plans.</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Cross-functional Collaboration</h3>
-                    <p>I have worked with testers, developers, product teams, end users, which shows I can navigate complex stakeholder environments and drive alignment.</p>
+                    <p>Experience collaborating with testers, developers, product teams, and end users in diverse stakeholder environments.</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Initiative and Ownership</h3>
-                    <p>I have taken on responsibilities in team leadership, and even Scrum Master and to some extent backlog prioritization. As DRTe, I lead biweekly incident review meetings for the Platina domain.</p>
+                    <p>Experience with team coordination activities, including Scrum Master roles and backlog prioritization. As DRTe, conducted biweekly incident review meetings for the Platina domain.</p>
                 </div>
                 <div class="strength-card">
                     <div class="strength-icon">
@@ -441,7 +442,7 @@
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Documentation</h3>
-                    <p>I have created numerous "how-to" documents that explain different tasks, making it easy to onboard new people (proven with two colleagues). My user manual for Power BI has been widely appreciated.</p>
+                    <p>Created various "how-to" documents explaining different tasks that helped with onboarding new team members. Developed a user manual for Power BI that was shared across the organization.</p>
                 </div>
             </div>
         </div>
@@ -454,7 +455,7 @@
             <div class="positions-list">
                 <div class="position-card priority-1">
                     <h3>AI & Data (support) Manager</h3>
-                    <p>With my proven experience in industrial data analytics (including supply chain data through OMP+), Power BI reporting, and AI implementation, I'm ideally positioned to make industrial operations more data-driven. My expertise in translating business needs into technical solutions, combined with my ability to coordinate between business teams and IT, makes me perfect for roles involving data systems, reporting, and cross-functional project leadership across various industrial sectors.</p>
+                    <p>With experience in industrial data analytics (including supply chain data through OMP+), Power BI reporting, and AI implementation, I can contribute to making industrial operations more data-driven. My background in translating business needs into technical solutions, along with experience coordinating between business teams and IT, would be valuable for roles involving data systems, reporting, and cross-functional project collaboration across various industrial sectors.</p>
                     <div class="position-skills">
                         <span class="skill-highlight">Industrial Analytics</span>
                         <span class="skill-highlight">Power BI & Dashboards</span>
@@ -464,7 +465,7 @@
                 </div>
                 <div class="position-card priority-2">
                     <h3>BI/Reporting Lead or Data Product Owner</h3>
-                    <p>Thanks to my Power BI experience, strong documentation skills, and data-oriented mindset, I'm capable of leading the development of analytical solutions that ensure data quality, usability, and measurable business impact.</p>
+                    <p>With experience in Power BI, documentation, and a data-oriented approach, I could contribute to the development of analytical solutions that support data quality, usability, and business impact.</p>
                     <div class="position-skills">
                         <span class="skill-highlight">Power BI</span>
                         <span class="skill-highlight">Data Quality</span>
@@ -473,7 +474,7 @@
                 </div>
                 <div class="position-card priority-3">
                     <h3>Data/IT Analyst</h3>
-                    <p>I'm skilled at translating business needs into clear technical requirements and aligning cross-functional teams around delivery. My analytical thinking and ability to structure complex processes make me well-suited for high-impact analyst roles—especially in data-intensive or AI-driven environments.</p>
+                    <p>Experience in translating business needs into technical requirements and working with cross-functional teams. Analytical thinking and familiarity with structured processes could be beneficial in analyst roles—particularly in data-intensive or AI-driven environments.</p>
                     <div class="position-skills">
                         <span class="skill-highlight">Requirements Analysis</span>
                         <span class="skill-highlight">Technical Translation</span>
@@ -495,7 +496,7 @@
                     </div>
                     <div class="intro-content">
                         <h3>Verified Professional Network</h3>
-                        <p>References are available upon request with specific contact details. Each reference represents a different perspective on my professional contributions at ArcelorMittal.</p>
+                        <p>References are available upon request with specific contact details. Each reference can provide context about my work experience at ArcelorMittal.</p>
                     </div>
                 </div>
             </div>
@@ -512,7 +513,7 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <p>Direct supervisor overseeing my professional development and strategic contributions. Provides insights into leadership potential, technical growth, and project impact. Has witnessed firsthand my ability to navigate complex challenges and deliver solutions under pressure.</p>
+                        <p>Direct supervisor overseeing my professional development. Provides insights into leadership approach, technical growth, and project involvement. Has observed my work on various challenges and delivery of solutions.</p>
                         <div class="expertise-tags">
                             <span class="tag leadership">Leadership Assessment</span>
                             <span class="tag performance">Performance Review</span>
@@ -674,10 +675,7 @@
                 <div class="contact-info-section">
                     <h3>Contact Information</h3>
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:mahdi.heydari@ArcelorMittal.com">mahdi.heydari@ArcelorMittal.com</a>
-                        </div>
+
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:mahdi.heydari.be@gmail.com">mahdi.heydari.be@gmail.com</a>
@@ -699,20 +697,28 @@
                 <div class="contact-form-section">
                     <h3>Send Message</h3>
                     <p>Feel free to reach out for opportunities, collaborations, or inquiries.</p>
-                    <a href="mailto:mahdi.heydari@ArcelorMittal.com,mahdi.heydari.be@gmail.com" class="email-button"><i class="fas fa-envelope"></i> Send Email</a>
+                    <a href="mailto:mahdi.heydari.be@gmail.com" class="email-button"><i class="fas fa-envelope"></i> Send Email</a>
+                    <div class="map-container hidden">
+                        <div id="world-map" class="small-world-map"></div>
+                        <div id="map-tooltip" class="map-tooltip"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Mahdi Heydari. All rights reserved.</p>
             <p class="credits"><strong>Created by Mahdi Heydari with assistance from GitHub Copilot</strong></p>
+            <p class="version-info">Initial rollout: September 20, 2025 | Last update: September 26, 2025</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="visitor-map.js"></script>
 </body>
 </html>

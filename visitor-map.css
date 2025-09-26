@@ -1,0 +1,125 @@
+/* Map container to position tooltip properly */
+.map-container {
+    position: relative;
+    width: 100%;
+    margin: 20px auto 0;
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+.map-container.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Small World Map in Contact Section */
+.small-world-map {
+    height: 200px;
+    width: 100%;
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Map tooltip for country information */
+.map-tooltip {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 14px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 100;
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    min-width: 120px;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+}
+
+/* Country colors for the map */
+.country {
+    transition: fill 0.3s ease;
+}
+
+.country {
+    transition: all 0.3s ease;
+}
+
+.country:hover {
+    fill: #8cdfff !important;
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+/* Add a slight shadow to make the map stand out from background */
+#world-map svg {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Special style for home country (Belgium) */
+.home-country {
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.3); }
+}
+
+/* Animation for map reveal */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Status tooltip for preview mode */
+.status-tooltip {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgba(40, 52, 69, 0.95);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(126, 226, 255, 0.3);
+    max-width: 300px;
+}
+
+.status-tooltip.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.status-tooltip-content p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.status-tooltip-content small {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Map related animations */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

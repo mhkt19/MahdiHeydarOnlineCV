@@ -1399,10 +1399,18 @@ section {
     padding: 2rem 0;
 }
 
+.footer .version-info {
+    font-size: 0.7rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+}
+
 .footer .credits {
     font-size: 0.75rem;
     color: #ffffff;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     opacity: 0.8;
 }
 
